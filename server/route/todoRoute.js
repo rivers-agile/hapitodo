@@ -17,8 +17,7 @@ module.exports = [
         config: {
             validate: { params: { filter: Joi.string().valid(['all', 'active', 'completed']) } },
             plugins: {
-                errorh: false,
-                crumb: { restful: false }
+                errorh: false
             }
         }
     },

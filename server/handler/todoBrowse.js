@@ -17,7 +17,7 @@ module.exports = function () {
                 return reply(Boom.badImplementation());
             }
 
-            return reply(todos || {}).code(200).header('x-csrf-token', request.server.plugins.crumb.generate(request, reply));
+            return reply(todos || {}).code(200);
         });
     };
 };
