@@ -7,7 +7,7 @@ const internals = {
         db: process.env.DB,
         // $lab:coverage:off$
         port: process.env.PORT || 8888,
-        connectionString: process.env.POSTGRES || 'postgres://hapitodo:hapitodo@localhost/hapitodo'
+        connectionString: process.env.DATABASE_URL || 'postgres://hapitodo:hapitodo@localhost/hapitodo'
         // $lab:coverage:on$
     },
     errorhOptions: {
@@ -50,12 +50,6 @@ const store = new Confidence.Store({
             plugin: {
                 register: 'errorh',
                 options: internals.errorhOptions
-            }
-        },
-        {
-            plugin: {
-                register: 'crumb',
-                options: { restful: true }
             }
         },
         {
